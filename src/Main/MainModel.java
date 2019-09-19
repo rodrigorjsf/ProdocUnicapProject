@@ -24,37 +24,4 @@ public class MainModel {
     }
 
 
-
-    /*
-    public boolean isLogin(String user, String pass, String opt) throws Exception{
-        PreparedStatement pr = null;
-        ResultSet rs = null;
-        String sql = "SELECT * FROM login where username = ? and password = ? and division = ?";
-
-        try{
-            pr = this.connection.prepareStatement(sql);
-            pr.setString(1, user);
-            pr.setString(2, pass);
-            pr.setString(3, opt);
-
-            pr.executeQuery();
-
-            boolean boll1;
-            if (rs.next()){
-                return true;
-            }
-            return false;
-        }catch (SQLException ex){
-            return false;
-        }finally {
-            pr.close();
-            rs.close();
-        }
-
-    }
-     */
-
-
-
-
 }

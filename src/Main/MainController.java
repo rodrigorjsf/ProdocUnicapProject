@@ -40,12 +40,13 @@ public class MainController {
         Image image = new Image(file.toURI().toString());
         ImageView imageView;
         imagem.setImage(image);
-        
+
         if (this.mainModel.isDataBaseConected()){
             this.dbStatus.setText("Status: online");
         }else{
             this.dbStatus.setText("Status: offline");
         }
+
     }
 
 

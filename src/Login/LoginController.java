@@ -1,32 +1,70 @@
 package Login;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-public class LoginController {
-    @FXML
-    private TextField txtUser;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-    @FXML
-    private PasswordField txtPass;
+public class LoginController implements Initializable {
 
-    //@FXML private javafx.scene.control.Button closeButton;
+    LoginModel loginModel = new LoginModel();
 
-    @FXML
-    private Button btnLogin;
+    @FXML private TextField txtUser;
+    @FXML private PasswordField txtPass;
+    @FXML private Label dbstatus;
+    @FXML private Button btnLogin;
 
-    /*
-    @FXML
-    private void closeButtonAction(){
-                // get a handle to the stage
-                Stage stage = (Stage) closeButton.getScene().getWindow();
-                // do what you have to do
-                stage.close();
+
+    public void initialize(URL location, ResourceBundle resources){
+        if (this.loginModel.isDataBaseConected()){
+            this.dbstatus.setText("Status: online");
+        }else{
+            this.dbstatus.setText("Status: offline");
+        }
     }
-*/
+
+    @FXML
+    private void FazerLogin() throws Exception {
+
+        try {
+
+            Stage stage = (Stage) btnLogin.getScene().getWindow();
+
+            if (loginModel.isLogin(txtUser.getText(), txtPass.getText())) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Usuário logado");
+                alert.setHeaderText(null);
+                alert.setContentText("Bem vindo!");
+                alert.showAndWait();
+
+
+
+                stage.close();
+            } else {
+
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Não foi possível realizar o login");
+                alert.setContentText("Confira se suas credenciais estão corretas!");
+                alert.showAndWait();
+
+            }
+        }catch (Exception ex){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro inesperado ocorreu, entre em contato com o suporte");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
+        }
+
+    }
+
 
 
 }
