@@ -1,6 +1,6 @@
 package Login;
 
-import Docente.objDadosDocente;
+import DOC.objDadosDocente;
 import dbUtil.dbConection;
 
 import java.sql.*;
@@ -31,7 +31,7 @@ public class LoginModel {
 
         String sql = "select * from tbUsuario ";
         sql = sql + " where usuario = '"+ user +"' ";
-        sql = sql + " and senha = '"+pass+"' ";
+        sql = sql + " and senha = '"+ pass +"' ";
 
         try {
             Stmt = connection.createStatement();
@@ -49,14 +49,15 @@ public class LoginModel {
     }
 
 
-    public objDadosDocente mtCapturaDocente(String user, String pass) throws SQLException {
+    public objDadosDocente mtCapturaDocente(String user, String pass, String tipo) throws SQLException {
         Statement Stmt = null;
         ResultSet resultSet = null;
         objDadosDocente retorno;
 
         String sql = "select * from tbUsuario ";
         sql = sql + " where usuario = '"+ user +"' ";
-        sql = sql + " and senha = '"+pass+"' ";
+        sql = sql + " and senha = '"+ pass +"' ";
+        sql = sql + " and tipo = '"+ tipo +"' ";
 
         try {
             Stmt = connection.createStatement();

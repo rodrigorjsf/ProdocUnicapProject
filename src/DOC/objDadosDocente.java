@@ -1,4 +1,4 @@
-package Docente;
+package DOC;
 
 public class objDadosDocente {
     private int id;

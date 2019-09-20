@@ -1,13 +1,11 @@
-package Docente;
+package DOC;
 
 import dbUtil.dbConection;
-import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class DocenteModel {

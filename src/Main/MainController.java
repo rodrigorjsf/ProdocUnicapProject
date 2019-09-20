@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import sun.rmi.runtime.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,51 +52,48 @@ public class MainController {
 
     public void btnEventDocente(javafx.event.ActionEvent event) {
         try{
+            ChamaMenu("DOC");
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
 
-            SelecionaMenu("Docente");
+    @FXML
+    public void btnEventADM(javafx.event.ActionEvent event) {
+        try{
+            ChamaMenu("ADM");
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
 
+    @FXML
+    public void btnEventAUX(javafx.event.ActionEvent event) {
+        try{
+            ChamaMenu("AUX");
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }
     }
 
 
-    public void SelecionaMenu(String tipoLogin){
-        try{
-            switch (tipoLogin){
-                case "Docente":
-                    menuDocente();
-                    break;
-                case "ADM":
+    public void ChamaMenu(String tipo) throws IOException {
 
-                    break;
-            }
-        }catch (Exception e){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Erro");
-            alert.setHeaderText("Erro inesperado ocorreu, entre em contato com o suporte");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Login/LoginView.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+
+            LoginController loginController = fxmlLoader.getController();
+            loginController.initData(tipo);
+
+            Stage stage = new Stage();
+            stage.setTitle("Fazer login");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }catch (IOException e){
+            e.printStackTrace();
         }
-
-
-
     }
-
-    public void menuDocente() throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Login/LoginView.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-
-        LoginController loginController = fxmlLoader.<LoginController>getController();
-        //loginController("Docente");
-
-        Stage stage = new Stage();
-        stage.setTitle("Fazer login");
-        stage.setScene(new Scene(root1));
-        stage.show();
-    }
-
 
 }
 
