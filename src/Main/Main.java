@@ -8,6 +8,17 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    private static Stage stage;
+
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public void setStage(Stage stage) {
+        Main.stage = stage;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
@@ -15,6 +26,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 543, 361));
         primaryStage.setResizable(false);
         primaryStage.show();
+        setStage(stage);
     }
 
 

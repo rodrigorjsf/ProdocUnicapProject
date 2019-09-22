@@ -5,10 +5,10 @@ import java.sql.SQLException;
 import dbUtil.dbConection;
 
 
-public class MainModel {
+public class MainDAO {
     Connection connection;
 
-    public MainModel(){
+    public MainDAO(){
         try{
             this.connection = dbConection.getConnection();
         }catch (SQLException e){

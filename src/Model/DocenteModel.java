@@ -1,30 +1,32 @@
-package DOC;
+package Model;
 
-public class objDadosDocente {
+public class DocenteModel {
     private int id;
     private String nome;
     private String titulo;
     private int tempoXP;
     private String senha;
     private String usuario;
+    private String cargo;
 
-
-    public objDadosDocente() {
+    public DocenteModel() {
         this.id = 0;
         this.nome = "";
         this.titulo = "";
         this.tempoXP = 0;
         this.senha = "";
         this.usuario = "";
+        this.cargo = "";
     }
 
-    public objDadosDocente(int id, String nome, String titulo, int tempoXP, String senha, String usuario) {
+    public DocenteModel(int id, String nome, String titulo, int tempoXP, String senha, String usuario, String cargo) {
         this.id = id;
         this.nome = nome;
         this.titulo = titulo;
         this.tempoXP = tempoXP;
         this.senha = senha;
         this.usuario = usuario;
+        this.cargo = cargo;
     }
 
 
@@ -76,6 +78,14 @@ public class objDadosDocente {
         this.usuario = usuario;
     }
 
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     @Override
     public String toString() {
         return "objDadosDocente{" +
@@ -85,6 +95,7 @@ public class objDadosDocente {
                 ", tempoXP=" + tempoXP +
                 ", senha='" + senha + '\'' +
                 ", usuario='" + usuario + '\'' +
+                ", cargo='" + cargo + '\'' +
                 '}';
     }
 }

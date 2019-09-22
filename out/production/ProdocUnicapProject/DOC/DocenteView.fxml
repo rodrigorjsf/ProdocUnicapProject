@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="DOC.DocenteController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="714.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DOC.DocenteController">
+   <children>
+      <Label layoutX="34.0" layoutY="71.0" prefHeight="32.0" prefWidth="138.0" text="Atualizar Dados:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="113.0" prefHeight="15.0" prefWidth="64.0" text="usuario" />
+      <Label layoutX="34.0" layoutY="222.0" prefHeight="15.0" prefWidth="64.0" text="senha" />
+      <Label layoutX="34.0" layoutY="172.0" prefHeight="15.0" prefWidth="64.0" text="Nome" />
+      <TextField fx:id="atuUsuario" layoutX="34.0" layoutY="139.0" />
+      <TextField fx:id="atuNome" layoutX="34.0" layoutY="189.0" />
+      <PasswordField fx:id="atuSenha" layoutX="34.0" layoutY="239.0" />
+      <Button fx:id="btnAtualizar" layoutX="109.0" layoutY="282.0" mnemonicParsing="false" onAction="#btnAtu" text="Atualizar">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableAti" layoutX="230.0" layoutY="71.0" prefHeight="365.0" prefWidth="915.0">
+         <columns>
+            <TableColumn fx:id="Col_codProf" prefWidth="180.0" text="Código do professor" />
+            <TableColumn fx:id="Col_desc" minWidth="0.0" prefWidth="468.0" text="Descrição" />
+            <TableColumn fx:id="Col_pont" prefWidth="78.0" text="Pontuação" />
+            <TableColumn fx:id="Col_Status" prefWidth="61.0" text="Status" />
+            <TableColumn fx:id="Col_CodAtiv" prefWidth="126.0" text="Código da atividade" />
+         </columns></TableView>
+      <Label layoutX="22.0" layoutY="525.0" prefHeight="32.0" prefWidth="276.0" text="Solicitação análise de atividade">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSolicitar" layoutX="22.0" layoutY="594.0" prefHeight="40.0" prefWidth="242.0" />
+      <Label layoutX="22.0" layoutY="577.0" prefHeight="17.0" prefWidth="132.0" text="Descrição da atividade:" />
+      <Button fx:id="btnSolicitar" layoutX="152.0" layoutY="643.0" mnemonicParsing="false" onAction="#btnSolicitar" prefHeight="40.0" prefWidth="112.0" text="Solicitar">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblUsuario" layoutX="41.0" layoutY="36.0" prefHeight="17.0" prefWidth="138.0" />
+      <Label fx:id="lblCargo" layoutX="230.0" layoutY="36.0" prefHeight="17.0" prefWidth="276.0" />
+   </children>
 </AnchorPane>

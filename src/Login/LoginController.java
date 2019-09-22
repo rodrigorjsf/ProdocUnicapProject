@@ -1,7 +1,8 @@
 package Login;
 
 import DOC.DocenteController;
-import DOC.objDadosDocente;
+import Model.DocenteModel;
+import DOC.usuarioDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,20 +17,38 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    private LoginModel loginModel;
+    //Declarações
+    private LoginDAO loginDAO;
     private String tpLogin;
-
     @FXML private TextField txtUser;
     @FXML private PasswordField txtPass;
     @FXML private Label dbstatus;
     @FXML private Button btnLogin;
 
+    //Construtor
+    public LoginController(){
+        this.loginDAO = new LoginDAO();
+    }
+
+
+    //Métodos e Funções
+    public void initialize(URL location, ResourceBundle resources){
+        if (this.loginDAO.isDataBaseConected()){
+            this.dbstatus.setText("Status: online ");
+        }else{
+            this.dbstatus.setText("Status: offline");
+        }
+
+    }
     @FXML private void FazerLogin() throws Exception {
-        objDadosDocente objAux;
+        DocenteModel objAux;
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
-            //Consulta no banco se o login está correto
-            objAux = loginModel.mtCapturaDocente(txtUser.getText(), txtPass.getText(), tpLogin);
+
+
+            objAux = loginDAO.mtCapturaDocente(txtUser.getText(), txtPass.getText(), tpLogin);
+
+
             if (objAux != null) {
                 //Mensagem de Bem vindo
                 exibeMensagem(objAux.getNome());
@@ -37,6 +56,9 @@ public class LoginController implements Initializable {
                 switch (tpLogin){
                     case "DOC":
                         loginDocente(objAux);
+                        break;
+                    case "ADM":
+                        loginADM(objAux);
                         break;
                 }
 
@@ -50,34 +72,19 @@ public class LoginController implements Initializable {
             exibeMensagemErro("Erro inesperado ocorreu, entre em contato com o suporte", ex.getMessage());
         }
     }
-
-    //Construtor
-    public LoginController(){
-        this.loginModel = new LoginModel();
-    }
-
-    public void initialize(URL location, ResourceBundle resources){
-        if (this.loginModel.isDataBaseConected()){
-            this.dbstatus.setText("Status: online ");
-        }else{
-            this.dbstatus.setText("Status: offline");
-        }
-
-    }
-
-    //Método para receber dados de outra View
     public void initData(String tpLogin){
         this.setTpLogin(tpLogin);
     }
-
-    public void loginDocente(objDadosDocente p_obj){
+    public void loginDocente(DocenteModel p_obj){
         try{
+            usuarioDAO obj_controller = usuarioDAO.GETINSTANCE();
+            obj_controller.setObjDados(p_obj);
+
 
             FXMLLoader loader = new FXMLLoader();
-            AnchorPane root = (AnchorPane)loader.load(getClass().getResource("/DOC/DocenteView.fxml").openStream());
+            AnchorPane root = (AnchorPane)loader.load(getClass().getResource("/DOC/DocenteView.fxml"));
 
             DocenteController docenteController = loader.getController();
-            docenteController.passarParametros(p_obj);
 
             Stage userStage = new Stage();
             Scene scene = new Scene(root);
@@ -90,16 +97,25 @@ public class LoginController implements Initializable {
             ex.printStackTrace();
         }
     }
+    public void loginADM(DocenteModel p_obj){
+        try{
+            usuarioDAO obj_controller = usuarioDAO.GETINSTANCE();
+            obj_controller.setObjDados(p_obj);
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(getClass().getResource("/ADM/ADM.fxml"));
+            DocenteController docenteController = loader.getController();
 
-    public String getTpLogin() {
-        return tpLogin;
+            Stage userStage = new Stage();
+            Scene scene = new Scene(root);
+            userStage.setScene(scene);
+            userStage.setTitle("Menu do docente ");
+            userStage.setResizable(false);
+            userStage.show();
+
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
     }
-
-    public void setTpLogin(String tpLogin) {
-        this.tpLogin = tpLogin;
-    }
-
-    //Métodos auxiliares
     private void exibeMensagem(String nome){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Usuário logado");
@@ -107,7 +123,6 @@ public class LoginController implements Initializable {
         alert.setContentText("Bem vindo " + nome +"!");
         alert.showAndWait();
     }
-
     private void exibeMensagemErro(String Header, String Content){
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Erro");
@@ -115,7 +130,13 @@ public class LoginController implements Initializable {
         alert.setContentText(Content);
         alert.showAndWait();
     }
-
+    //Getters e setters
+    public String getTpLogin() {
+        return tpLogin;
+    }
+    public void setTpLogin(String tpLogin) {
+        this.tpLogin = tpLogin;
+    }
 
 
 

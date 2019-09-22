@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="609.0" prefWidth="1312.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ADM.ADMController">
+   <children>
+      <Label layoutX="957.0" layoutY="335.0" prefHeight="29.0" prefWidth="135.0" text="Cadastrar professor">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="959.0" layoutY="431.0" text="Nome:" />
+      <Label layoutX="960.0" layoutY="389.0" text="Usuário:" />
+      <Label layoutX="960.0" layoutY="475.0" prefHeight="17.0" prefWidth="43.0" text="Cargo:" />
+      <TextField fx:id="txtprofUser" layoutX="960.0" layoutY="406.0" />
+      <TextField fx:id="txtprofNome" layoutX="959.0" layoutY="448.0" />
+      <TextField fx:id="txtProfCargo" layoutX="956.0" layoutY="490.0" prefHeight="25.0" prefWidth="157.0" />
+      <Label layoutX="1142.0" layoutY="381.0" prefHeight="17.0" prefWidth="43.0" text="Título:" />
+      <TextField fx:id="txtProfTitulo" layoutX="1142.0" layoutY="406.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="1141.0" layoutY="431.0" prefHeight="17.0" prefWidth="128.0" text="Tempo de Experiência:" />
+      <TextField fx:id="txtProfTempXP" layoutX="1141.0" layoutY="447.0" />
+      <Label layoutX="1141.0" layoutY="475.0" prefHeight="17.0" prefWidth="43.0" text="Senha:" />
+      <PasswordField fx:id="txtProfSenha" layoutX="1141.0" layoutY="492.0" />
+      <Button fx:id="btnCadastrar" layoutX="1142.0" layoutY="538.0" mnemonicParsing="false" onAction="#Cadastro" prefHeight="36.0" prefWidth="149.0" text="Cadastrar" />
+      <Label layoutX="37.0" layoutY="27.0" prefHeight="29.0" prefWidth="84.0" text="Atividades">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="608.0" layoutY="20.0" prefHeight="29.0" prefWidth="84.0" text="Professor">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbAtiv" layoutX="37.0" layoutY="62.0" prefHeight="253.0" prefWidth="557.0">
+        <columns>
+          <TableColumn fx:id="col_codProf" prefWidth="107.0" text="Codigo do Professor" />
+          <TableColumn fx:id="col_descricao" prefWidth="226.0" text="Descrição" />
+            <TableColumn fx:id="col_pontuacao" prefWidth="68.0" text="pontuação" />
+            <TableColumn fx:id="col_status" prefWidth="71.0" text="Status" />
+            <TableColumn fx:id="col_codAtiv" prefWidth="84.0" text="Cod. da Atividade" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tbProf" layoutX="608.0" layoutY="61.0" prefHeight="253.0" prefWidth="682.0">
+        <columns>
+          <TableColumn fx:id="col_ProfID" prefWidth="49.0" text="ID" />
+          <TableColumn fx:id="col_ProfUser" prefWidth="101.0" text="Usuário" />
+            <TableColumn fx:id="col_ProfNome" prefWidth="135.0" text="Nome" />
+            <TableColumn fx:id="col_ProfCargo" prefWidth="153.0" text="Cargo" />
+            <TableColumn fx:id="col_ProfTitulo" prefWidth="118.0" text="Titulo" />
+            <TableColumn fx:id="col_ProfXP" prefWidth="125.0" text="Tempo Exp." />
+        </columns>
+      </TableView>
+      <Label layoutX="37.0" layoutY="342.0" prefHeight="17.0" prefWidth="135.0" text="Atualizar atividade">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="374.0" text="Código da atividadade:" />
+      <TextField fx:id="txtAtuCodAtiv" layoutX="40.0" layoutY="395.0" prefHeight="25.0" prefWidth="120.0" />
+      <Label layoutX="41.0" layoutY="431.0" text="Status:" />
+      <Label layoutX="40.0" layoutY="483.0" text="Pontuação:" />
+      <TextField fx:id="txtAtuPont" layoutX="41.0" layoutY="504.0" prefHeight="25.0" prefWidth="120.0" />
+      <Button fx:id="btnAtualizar" layoutX="40.0" layoutY="546.0" mnemonicParsing="false" onAction="#Atualizar" prefHeight="36.0" prefWidth="120.0" text="Atualizar" />
+      <ComboBox fx:id="cmbStatus" layoutX="40.0" layoutY="448.0" prefHeight="25.0" prefWidth="120.0" />
+   </children>
+</AnchorPane>

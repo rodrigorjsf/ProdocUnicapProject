@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -17,22 +16,14 @@ import java.io.IOException;
 
 public class MainController {
 
-    private MainModel mainModel = new MainModel();
+    private MainDAO mainDAO = new MainDAO();
 
-    @FXML
-    private Label dbStatus;
+    @FXML private Label dbStatus;
+    @FXML private Button btnDocente;
+    @FXML private Button btnAdm;
+    @FXML private Button btnAuxiliar;
+    @FXML private ImageView imagem;
 
-    @FXML
-    private Button btnDocente;
-
-    @FXML
-    private Button btnAdm;
-
-    @FXML
-    private Button btnAuxiliar;
-
-    @FXML
-    private ImageView imagem;
 
     public void initialize(){
 
@@ -41,7 +32,7 @@ public class MainController {
         ImageView imageView;
         imagem.setImage(image);
 
-        if (this.mainModel.isDataBaseConected()){
+        if (this.mainDAO.isDataBaseConected()){
             this.dbStatus.setText("Status: online");
         }else{
             this.dbStatus.setText("Status: offline");

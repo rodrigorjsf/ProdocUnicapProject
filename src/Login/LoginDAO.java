@@ -1,15 +1,15 @@
 package Login;
 
-import DOC.objDadosDocente;
+import Model.DocenteModel;
 import dbUtil.dbConection;
 
 import java.sql.*;
 
-public class LoginModel {
+public class LoginDAO {
 
     private Connection connection;
 
-    public LoginModel(){
+    public LoginDAO(){
         try{
             this.connection = dbConection.getConnection();
         }catch (SQLException e){
@@ -49,10 +49,10 @@ public class LoginModel {
     }
 
 
-    public objDadosDocente mtCapturaDocente(String user, String pass, String tipo) throws SQLException {
+    public DocenteModel mtCapturaDocente(String user, String pass, String tipo) throws SQLException {
         Statement Stmt = null;
         ResultSet resultSet = null;
-        objDadosDocente retorno;
+        DocenteModel retorno;
 
         String sql = "select * from tbUsuario ";
         sql = sql + " where usuario = '"+ user +"' ";
@@ -65,13 +65,14 @@ public class LoginModel {
 
             if (resultSet.next()) {
 
-                retorno = new objDadosDocente(
+                retorno = new DocenteModel(
                         resultSet.getInt("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("titulo"),
                         resultSet.getInt("tempoXP"),
                         resultSet.getString("senha"),
-                        resultSet.getString("usuario")
+                        resultSet.getString("usuario"),
+                        resultSet.getString("cargo")
                 );
                return retorno;
 
