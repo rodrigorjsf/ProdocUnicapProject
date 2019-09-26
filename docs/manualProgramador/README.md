@@ -5,7 +5,7 @@ Projeto de desenvolvimento da aplicação **PRODOC UNICAP** . Este módulo é im
 Este projeto usa as seguintes tecnologias:
 - [Java 8](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 - [SQLite](https://www.sqlite.org/)
-- [j forms]
+- J Forms
 
 ## 1- Ferramentas e Configurações
 
