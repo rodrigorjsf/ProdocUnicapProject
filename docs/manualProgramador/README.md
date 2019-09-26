@@ -76,27 +76,27 @@ src
 
 ```
 **Para cada pacote:**
- - ADM
+- ADM
   - ADM.fxml
   - ADMController
- - Atividades
+- Atividades
   - AtividadesDAO
  - dbUtil
   - dbConection
- - DOC
+- DOC
   - DocenteCOntroller
   - DocenteView.fxml
   - usuarioDAO
- - Login
+- Login
   - LoginController
   - LoginDAO
   - LoginView.fxml
- - Main
+- Main
   - Main
   - MainController
   - MainDAO
   - MainView.fxml
- - Model
+- Model
   - AtividadeModel
   - DocenteModel
 
