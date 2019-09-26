@@ -52,15 +52,15 @@ Ferramenta de gerenciamento de BDs SQLite. Para baixar o DB Browser (SQLite), cl
 
 ## 2- Arquitetura do Sistema
 
-Este projeto segue um padrão arquitetural de criação de da aplicação a partir do _J _Forms onde são criadas as em camadas [[1](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html),[2](https://en.wikipedia.org/wiki/Multitier_architecture)] para fornecer uma API REST [[3](https://dzone.com/articles/intro-rest),[4](https://www.quora.com/What-are-RESTful-APIs-and-how-do-they-work),[5](https://blog.caelum.com.br/rest-principios-e-boas-praticas/)] ao módulo _frontend_ da aplicação. A camada mais externa do sistema (_Service_) implementa os serviços REST (JAX-RS), tendo esta camada a responsabilidade de validar os dados de entrada, assim como realizar as restrições de segurança necessárias (autenticação/autorização) no acesso aos serviços disponibilizados. 
+Este projeto segue um padrão arquitetural MVC onde é que um padrão de arquitetura de software, separando sua aplicação em 3 camadas. A camada de interação do usuário(view), a camada de manipulação dos dados(model) e a camada de controle(controller).Para criação da view foi utilizado o _J_ _Forms_ utiliza FXML para criação da exibição de dados. A manipulação de dados e regras de negócio é através do Java seguindo o paradigma da _orientação_ _a_ _objetos_, é responsável pela leitura e escrita de dados, e também de suas validações.
 
 
 A organização e significado de cada um dos pacotes do projeto segue abaixo:
 
 ```
 src
-├── ADM 								  -> classe e FXML do adiministrador
-├── Atividades 							  -> classe das atividades
+├── ADM                                   -> classe e FXML do adiministrador
+├── Atividades                            -> classe das atividades
 ├── dbUtil                                -> classe e arquivo jar da camada de persistência de dados
 ├── DOC                                   -> classe e FXML de docentes
 ├── Login                                 -> classe e FXML de controle de login
