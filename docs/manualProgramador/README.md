@@ -1,34 +1,68 @@
-# PRODOC UNICAP :: Manual do Usuário
+# PRODOC UNICAP:: Manual do Programador
 
-## 1- Usabilidade (Por tela)
+Projeto de desenvolvimento da aplicação **PRODOC UNICAP** . Este módulo é implementado em linguagem de programação Java.
 
-### Início
+Este projeto usa as seguintes tecnologias:
+- [Java 8](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
+- [SQLite](https://www.sqlite.org/)
+- [j forms]
 
-Na tela inicial da aplicação é mostrado ao usuário dois botões: Docente e Administrador
+## 1- Ferramentas e Configurações
 
-- Botão Docente
-	- Botão a ser utilizado pelos docentes UNICAP para realizar seu login no sistema e assim administrar suas atividades, informações da conta e requisições de pontuação em atividades;
-	
-- Botão Administrativo
-	- Botão a ser utlizado pelo usuário administrador a fim de monitorar os professores cadastrados no sistema e as requisições de pontuação em atividades feitas pelos docentes, oferecendo o poder de avaliar essas atividades e validar as mesmas. Também permite o cadastro de novos docentes.
+### 1.1- Eclipse
 
-## 2- Módulos
+**Instalação**
 
-### 2.1 Docente
+Baixar e descompactar um dos pacotes (Win ou Linux 64-bit) da versão `Eclipse IDE for Java Developers` que pode ser encontrado [aqui](https://www.eclipse.org/downloads/packages/).
 
-Após clicar no botão `Docente`, o sistema irá pedir as informações cadastrais (Usuário e Senha) do docente para que ele faça o login no módulo de docentes.
+**Importação do Projeto (Git)**
 
-Feito o Login, na tela do docente irá ser informado seu Usuário e Cargo acima das iterações disponíveis. 
-	Na área "Atualizar Dados" é permitido ao usuário a atualização de seus dados cadastrais (usuário, nome e senha).
-	Ao lado, será exibido uma tabela onde mostra todas as requisições de atividades feitas pelo docente, onde nessa tabela é informado para cada requisição o código do professor, descrição, pontuação, status e código da atividade.
-	No canto inferior esquerdo da tela, na área "Solicitação análise de atividade" é possível fazer uma requisição de avaliação de uma atividade a ser pontuada.
+Após abrir o Eclipse, importar projeto do Git:
 
-### 2.2 Administrador
+1. _File_ -> _Import..._ -> _Projects from Git_ -> _Clone URI_
+2. URI: `git@github.com:rodrigorjsf/ProdocUnicapProject.git` -> _Next_
+3. Escolher _branch_ `master`
+4. _Local destination_: `pasta-do-workspace`
+5. _Import as general project_ -> _Next_ -> _Finish_
 
-Após clicar no botão `Administrador`, o sistema irá pedir as informações cadastrais (Usuário e Senha) do usuário Administrador para que ele faça o login no módulo Administrador.
+**Configuração do Projeto**
 
-Feito o Login, na tela do administrador irá ser mostrado telas para gerenciamento da aplicação.
-	Na área Atividades será informado todas as Atividades, independente de status, de um docente selecionado. Entre as informações estão: Código do Professor, Descrição, Pontuação, Status e Código da atividade.
-	Na área Professor será informado todos os docentes cadastrados no sistema da aplicação. Entre as informações estão: ID, Usuário, Nome, Cargo, Título e tempo de Experiência.
-	No canto inferior esquerdo, na área "Atualizar atividade" é possível atualizar o Status e Pontuação de uma atividade selecionada através de seu código.
-	No canto inferior direito, na área "Cadastrar professor" é possível cadastrar um novo docente ao sistema informando seu Usuário, Nome, Cargo, Título, Tempo de Experiência e Senha.
+Para Intellij
+
+1. Adicionar o arquivo _sqlite-jdbc-3.27.2.1.jar_ na pasta _src_ -> _dbUtil_
+2. Clicar com botão direito no projeto -> _File_ -> _Project_Structure_  -> _Libraries..._
+2. Apertar no `+` e selecionar a pasta _dbUtil_
+3. OK 
+
+Incluir `Run Configurations`:
+
+**Java Application** (para rodar a aplicação localmente)
+- _New launch configuration_:
+  - _Main_
+    - _Name_: `prodoc-unicap`
+    - _Project_: `selecionar-nome-do-projeto`
+    - _Main class_: `Main.Main`
+
+### 1.2- DB Browser (SQLite)
+
+Ferramenta de gerenciamento de BDs SQLite. Para baixar o DB Browser (SQLite), clique [aqui](https://sqlitebrowser.org/dl/).
+
+
+## 2- Arquitetura do Sistema
+
+Este projeto segue um padrão arquitetural em camadas [[1](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html),[2](https://en.wikipedia.org/wiki/Multitier_architecture)] para fornecer uma API REST [[3](https://dzone.com/articles/intro-rest),[4](https://www.quora.com/What-are-RESTful-APIs-and-how-do-they-work),[5](https://blog.caelum.com.br/rest-principios-e-boas-praticas/)] ao módulo _frontend_ da aplicação. A camada mais externa do sistema (_Service_) implementa os serviços REST (JAX-RS), tendo esta camada a responsabilidade de validar os dados de entrada, assim como realizar as restrições de segurança necessárias (autenticação/autorização) no acesso aos serviços disponibilizados. 
+
+
+A organização e significado de cada um dos pacotes do projeto segue abaixo:
+
+```
+src
+├── ADM 								  -> classe e FXML do adiministrador
+├── Atividades 							  -> classe das atividades
+├── dbUtil                                -> classe e arquivo jar da camada de persistência de dados
+├── DOC                                   -> classe e FXML de docentes
+├── Login                                 -> classe e FXML de controle de login
+├── Main                              	  -> classe e FXML da inicialização da aplicação
+├── Model                                 -> classe e FXML dos models
+
+```
