@@ -23,8 +23,8 @@ Após clicar no botão `Docente`, o sistema irá pedir as informações cadastra
 
 - Feito o Login, na tela do docente irá ser informado seu Usuário e Cargo acima das iterações disponíveis. 
 
-![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/mainMenu.jpg)
-
+	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/mainMenu.jpg)
+	
 	- Na área "Atualizar Dados" é permitido ao usuário a atualização de seus dados cadastrais (usuário, nome e senha).
 	
 	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/attDadosDoc.jpg)
