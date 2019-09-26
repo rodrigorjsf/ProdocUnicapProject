@@ -81,7 +81,7 @@ src
   - ADMController
 - Atividades
   - AtividadesDAO
- - dbUtil
+- dbUtil
   - dbConection
 - DOC
   - DocenteCOntroller
