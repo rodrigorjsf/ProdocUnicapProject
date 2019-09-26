@@ -10,7 +10,7 @@ Na tela inicial da aplicação é mostrado ao usuário dois botões: Docente e A
 	- Botão a ser utilizado pelos docentes UNICAP para realizar seu login no sistema e assim administrar suas atividades, informações da conta e requisições de pontuação em atividades;
 	
 - Botão Administrativo
-	- Botão a ser utlizado pelo usuário administrador a fim de monitorar os professores cadastrados no sistema e as requisições de pontuação em atividades feitas pelos docentes, oferecendo o poder de avaliar essas atividades e validar as mesmas. Também permite o cadastro de novos docentes.
+	- Botão a ser utilizado pelo usuário administrador a fim de monitorar os professores cadastrados no sistema e as requisições de pontuação em atividades feitas pelos docentes, oferecendo o poder de avaliar essas atividades e validar as mesmas. Também permite o cadastro de novos docentes.
 
 ## 2- Módulos
 
