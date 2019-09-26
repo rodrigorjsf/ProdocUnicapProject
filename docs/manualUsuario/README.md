@@ -42,12 +42,25 @@ Após clicar no botão `Administrador`, o sistema irá pedir as informações ca
 ![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/senhaDocente.jpg)
 
 - Feito o Login, na tela do administrador irá ser mostrado telas para gerenciamento da aplicação.
-![Alt text]()
+
+	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/telaAdm.jpg)
+	
 	- Na área Atividades será informado todas as Atividades, independente de status, de um docente selecionado. Entre as informações estão: Código do Professor, Descrição, Pontuação, Status e Código da atividade.
-	![Alt text]()
+	
+	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/atividades.jpg)
+	
 	- Na área Professor será informado todos os docentes cadastrados no sistema da aplicação. Entre as informações estão: ID, Usuário, Nome, Cargo, Título e tempo de Experiência.
-	![Alt text]()
+	
+	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/professor.jpg)
+	
 	- No canto inferior esquerdo, na área "Atualizar atividade" é possível atualizar o Status e Pontuação de uma atividade selecionada através de seu código.
-	![Alt text]()
+	
+	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/attAtividade.jpg)
+	
 	- No canto inferior direito, na área "Cadastrar professor" é possível cadastrar um novo docente ao sistema informando seu Usuário, Nome, Cargo, Título, Tempo de Experiência e Senha.
-	![Alt text]()
+	
+	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/newProfessor.jpg)
+		
+	É exibido uma mensagem de sucesso caso a validação ocorra.
+	
+	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/attRequisicao.jpg)
