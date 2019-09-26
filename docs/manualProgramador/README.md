@@ -57,8 +57,8 @@ A organização e significado de cada um dos pacotes do projeto segue abaixo:
 
 ```
 src
-├── ADM 								  -> classe e FXML do adiministrador
-├── Atividades 							  -> classe das atividades
+├── ADM 								                  -> classe e FXML do adiministrador
+├── Atividades 							               -> classe das atividades
 ├── dbUtil                                -> classe e arquivo jar da camada de persistência de dados
 ├── DOC                                   -> classe e FXML de docentes
 ├── Login                                 -> classe e FXML de controle de login
