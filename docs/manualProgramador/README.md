@@ -76,29 +76,29 @@ src
 
 ```
 **Para cada pacote:**
- -ADM
-  -ADM.fxml
-  -ADMController
- -Atividades
-  -AtividadesDAO
- -dbUtil
-  -dbConection
- -DOC
-  -DocenteCOntroller
-  -DocenteView.fxml
-  -usuarioDAO
- -Login
-  -LoginController
-  -LoginDAO
-  -LoginView.fxml
- -Main
-  -Main
-  -MainController
-  -MainDAO
-  -MainView.fxml
- -Model
-  -AtividadeModel
-  -DocenteModel
+ - ADM
+  - ADM.fxml
+  - ADMController
+ - Atividades
+  - AtividadesDAO
+ - dbUtil
+  - dbConection
+ - DOC
+  - DocenteCOntroller
+  - DocenteView.fxml
+  - usuarioDAO
+ - Login
+  - LoginController
+  - LoginDAO
+  - LoginView.fxml
+ - Main
+  - Main
+  - MainController
+  - MainDAO
+  - MainView.fxml
+ - Model
+  - AtividadeModel
+  - DocenteModel
 
 
 ## 3- Regras de negócio
