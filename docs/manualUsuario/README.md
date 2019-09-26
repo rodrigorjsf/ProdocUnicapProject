@@ -5,6 +5,7 @@
 ### Início
 
 Na tela inicial da aplicação é mostrado ao usuário dois botões: Docente e Administrador
+![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/telaInicial.jpg)
 
 - Botão Docente
 	- Botão a ser utilizado pelos docentes UNICAP para realizar seu login no sistema e assim administrar suas atividades, informações da conta e requisições de pontuação em atividades;
