@@ -107,4 +107,8 @@ src
   - Alteração é feita através da aprovação de uma atividade por um adiministrador, essa alteração é feita nos campos (`pontuacao`) e (`status`);
 - Exclusão
   - Não permitir a remoção de um registro;
+  
+  ## 4 - MER
+  
+  ![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/pos-app-mer.jpg)
 
