@@ -18,17 +18,17 @@ Na tela inicial da aplicação é mostrado ao usuário dois botões: Docente e A
 
 Após clicar no botão `Docente`, o sistema irá pedir as informações cadastrais (Usuário e Senha) do docente para que ele faça o login no módulo de docentes.
 
-Feito o Login, na tela do docente irá ser informado seu Usuário e Cargo acima das iterações disponíveis. 
-	Na área "Atualizar Dados" é permitido ao usuário a atualização de seus dados cadastrais (usuário, nome e senha).
-	Ao lado, será exibido uma tabela onde mostra todas as requisições de atividades feitas pelo docente, onde nessa tabela é informado para cada requisição o código do professor, descrição, pontuação, status e código da atividade.
-	No canto inferior esquerdo da tela, na área "Solicitação análise de atividade" é possível fazer uma requisição de avaliação de uma atividade a ser pontuada.
+- Feito o Login, na tela do docente irá ser informado seu Usuário e Cargo acima das iterações disponíveis. 
+	- Na área "Atualizar Dados" é permitido ao usuário a atualização de seus dados cadastrais (usuário, nome e senha).
+	- Ao lado, será exibido uma tabela onde mostra todas as requisições de atividades feitas pelo docente, onde nessa tabela é informado para cada requisição o código do professor, descrição, pontuação, status e código da atividade.
+	- No canto inferior esquerdo da tela, na área "Solicitação análise de atividade" é possível fazer uma requisição de avaliação de uma atividade a ser pontuada.
 
 ### 2.2 Administrador
 
 Após clicar no botão `Administrador`, o sistema irá pedir as informações cadastrais (Usuário e Senha) do usuário Administrador para que ele faça o login no módulo Administrador.
 
-Feito o Login, na tela do administrador irá ser mostrado telas para gerenciamento da aplicação.
-	Na área Atividades será informado todas as Atividades, independente de status, de um docente selecionado. Entre as informações estão: Código do Professor, Descrição, Pontuação, Status e Código da atividade.
-	Na área Professor será informado todos os docentes cadastrados no sistema da aplicação. Entre as informações estão: ID, Usuário, Nome, Cargo, Título e tempo de Experiência.
-	No canto inferior esquerdo, na área "Atualizar atividade" é possível atualizar o Status e Pontuação de uma atividade selecionada através de seu código.
-	No canto inferior direito, na área "Cadastrar professor" é possível cadastrar um novo docente ao sistema informando seu Usuário, Nome, Cargo, Título, Tempo de Experiência e Senha.
+- Feito o Login, na tela do administrador irá ser mostrado telas para gerenciamento da aplicação.
+	- Na área Atividades será informado todas as Atividades, independente de status, de um docente selecionado. Entre as informações estão: Código do Professor, Descrição, Pontuação, Status e Código da atividade.
+	- Na área Professor será informado todos os docentes cadastrados no sistema da aplicação. Entre as informações estão: ID, Usuário, Nome, Cargo, Título e tempo de Experiência.
+	- No canto inferior esquerdo, na área "Atualizar atividade" é possível atualizar o Status e Pontuação de uma atividade selecionada através de seu código.
+	- No canto inferior direito, na área "Cadastrar professor" é possível cadastrar um novo docente ao sistema informando seu Usuário, Nome, Cargo, Título, Tempo de Experiência e Senha.
