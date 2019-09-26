@@ -21,6 +21,16 @@ Após clicar no botão `Docente`, o sistema irá pedir as informações cadastra
 
 ![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/senhaDocente.jpg)
 
+Em caso de sucesso no login é exibida a seguinte mensagem
+
+https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/loginSucess.jpg
+
+Em caso de não sucesso no login é exibida a seguinte mensagem
+
+https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/loginError.jpg
+
+*As mesmas regras se aplicam ao módulo Administrador*
+
 - Feito o Login, na tela do docente irá ser informado seu Usuário e Cargo acima das iterações disponíveis. 
 
 	![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/manualUsuario/Telas/mainMenu.jpg)
