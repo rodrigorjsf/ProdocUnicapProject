@@ -41,6 +41,8 @@ Para Intellij
 2. Apertar no `+` e selecionar a pasta _dbUtil_
 3. OK 
 
+- Para baixar o JAR do SQLite ir na pasta _docs_, baixar o .ZIP e descompactar na pasta dbUtil ou clique [aqui](https://github.com/rodrigorjsf/ProdocUnicapProject/raw/master/docs/sqlite-jdbc-3.27.2.1.zip) para baixar.
+
 Incluir `Run Configurations`:
 
 **Java Application** (para rodar a aplicação localmente)
