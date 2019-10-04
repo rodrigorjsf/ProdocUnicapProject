@@ -1,6 +1,11 @@
-# PRODOC UNICAP:: Manual do Programador
+# PRODOC UNICAP:: Manual do Programador :: V1.0
 
 Projeto de desenvolvimento da aplicação **PRODOC UNICAP** . Este módulo é implementado em linguagem de programação Java.
+
+- Equipe envolvida no desenvolvimento do projeto:
+  - João Pedro de Melo Cabana
+  - Rodrigo Jorge de Santana França
+  - Vitor Viana
 
 Este projeto usa as seguintes tecnologias:
 - [Java 8](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -36,6 +41,8 @@ Para Intellij
 2. Apertar no `+` e selecionar a pasta _dbUtil_
 3. OK 
 
+- **Para baixar** o JAR do SQLite ir na pasta _docs_, baixar o .ZIP e descompactar na pasta dbUtil ou clique [aqui](https://github.com/rodrigorjsf/ProdocUnicapProject/raw/master/docs/sqlite-jdbc-3.27.2.1.zip) para baixar.
+
 Incluir `Run Configurations`:
 
 **Java Application** (para rodar a aplicação localmente)
@@ -53,6 +60,8 @@ Ferramenta de gerenciamento de BDs SQLite. Para baixar o DB Browser (SQLite), cl
 ## 2- Arquitetura do Sistema
 
 Este projeto segue um padrão arquitetural MVC onde é que um padrão de arquitetura de software, separando sua aplicação em 3 camadas. A camada de interação do usuário(view), a camada de manipulação dos dados(model) e a camada de controle(controller).Para criação da view foi utilizado o _J_ _Forms_ utiliza FXML para criação da exibição de dados. A manipulação de dados e regras de negócio é através do Java seguindo o paradigma da _orientação_ _a_ _objetos_, é responsável pela leitura e escrita de dados, e também de suas validações.
+Foi desenvolvida de maneira centralizada com aplicação local, utilizando base de dados SQLite local.
+
 
 
 A organização e significado de cada um dos pacotes do projeto segue abaixo:
@@ -68,6 +77,31 @@ src
 ├── Model                                 -> classe e FXML dos models
 
 ```
+**Para cada pacote:**
+- ADM
+  - ADM.fxml
+  - ADMController
+- Atividades
+  - AtividadesDAO
+- dbUtil
+  - dbConection
+- DOC
+  - DocenteCOntroller
+  - DocenteView.fxml
+  - usuarioDAO
+- Login
+  - LoginController
+  - LoginDAO
+  - LoginView.fxml
+- Main
+  - Main
+  - MainController
+  - MainDAO
+  - MainView.fxml
+- Model
+  - AtividadeModel
+  - DocenteModel
+
 
 ## 3- Regras de negócio
 
@@ -107,4 +141,8 @@ src
   - Alteração é feita através da aprovação de uma atividade por um adiministrador, essa alteração é feita nos campos (`pontuacao`) e (`status`);
 - Exclusão
   - Não permitir a remoção de um registro;
+  
+  ## 4 - MER
+  
+  ![Alt text](https://github.com/rodrigorjsf/ProdocUnicapProject/blob/master/docs/pos-app-mer.jpg)
 
